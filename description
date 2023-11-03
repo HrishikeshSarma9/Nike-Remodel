@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent mb-0 pb-0">
+    <div class="container ">
+
+        <!-- LOGO for branding -->
+        <a class="navbar-brand" href="#"><img src="../../images/logo/Logo_NIKE.svg" alt=""></a>
+
+        <!-- hamburger icon -->
+        <button 
+            class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around" 
+            class="navbar-toggler" 
+            type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#navbarContent" 
+            aria-controls="navbarContent" 
+            aria-expanded="false" 
+            aria-label="Toggle navigation">
+
+            <!-- hamburger icon -->
+            <span class="toggler-icon top-bar"></span>
+            <!-- top bar and bottom bar will become x while middle bar will disappear -->
+            <span class="toggler-icon middle-bar"></span>
+            <span class="toggler-icon bottom-bar"></span>
+        </button>
+
+        <!-- menu controlled by hamburger -->
+        <!-- content in NAVBAR -->
+        <div class="collapse navbar-collapse align-content-center justify-content-center" id="navbarContent">
+            <form class="search-form m-auto mb-3 mb-lg-2">
+                <input type="text" placeholder="Search">
+                <button type="submit"><img src="../../images/icon/search-icon.svg" alt=""></button>
+            </form>
+
+            <div class="d-flex justify-content-center align-content-center mb-3 mb-lg-1 gap-3">
+                <a href="#" class="login-btn">  
+                    Login
+                </a>
+                <a href="#">
+                    <button class="bg-transparent border-0 cart-icon"> 
+                        <i class="fa-solid fa-cart-shopping fa-xl" ></i>
+                        <!-- <i class="cart fa fa-shopping-cart fa-lg" style="color: #DE252A;"></i> -->
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>

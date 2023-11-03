@@ -1,0 +1,479 @@
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  html,body{
+    width: 100%;
+    height: 100%;
+    
+  }
+
+  
+  
+  
+  /* nike white logo in background */
+
+  /* container for the logo */
+  .nike-logo-bg{
+
+    /* center the logo in the page using flex */
+    display: flex;
+    justify-content: center;
+    /* using position absolute to make a image a background as mentioned in assignment example */
+    position: absolute;
+    margin-top: 10rem;
+    /* send the image back */
+    z-index: -1;
+
+    /* setting with of the logo image */
+    & img{
+      width: 90%;
+    }
+  }
+
+  /* layout for the content of the hero section */
+  .hero-grid{
+    
+    /* using grid to make the layout with a single column*/
+    /* layout for small screen */
+    display: grid;
+    gap: 1rem;
+    /* mage spacing around */
+    padding: 1rem;
+    margin: 5rem 0;
+    
+  }
+
+  /* text content in hero section */
+  .text-content{
+    padding: 0 2rem;
+
+    & h1{
+      font-size: 43px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      line-height: 45px;
+      font-weight: 700;
+
+      & span{
+        color: red;
+      }
+    }
+
+    & p{
+      font-size: 14px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      line-height: 19px;
+      margin-left: .5em;
+    }
+
+    & button{
+      font-size: 14px;
+      color: white;
+      background-color: black;
+      padding: .65rem 1.5rem;
+      border: none;
+      border-radius: 0 50px 50px 50px;
+      margin-left: .8rem;
+      transition: all .5s ease;
+    }
+    & button:hover{
+        transform: translateY(-5px);
+        scale: 1.2;
+    }
+    & botton:focus{
+      transform: translateY(-5px);
+        scale: 1.2;
+    }
+  }
+  .shoe-image{
+    & img{
+      width: 100%;
+    }
+  }
+
+  /* for medium screen */
+  @media (min-width: 800px){
+
+    /* nike logo in background as an image */
+    .nike-logo-bg{
+      margin-top: 2rem;
+    }
+
+    /* change the layout by having 3 equal width columns */
+    .hero-grid{
+      grid-template-columns: 1fr 1fr 1fr;
+      
+    }
+
+    /* using grid-row and grid-column to make the 2nd column common for both the text content and the shoe image */
+    .text-content{
+      /* cover 2 columns and 1 row  with 2 column as common*/
+      grid-column: 1/3;
+      grid-row: 1/2;
+      /* In case the text content and shoe image overlap, the text should be above the image */
+      z-index: 2;
+
+      & h1{
+        font-size: 2.65rem;
+        line-height: 42px;
+        font-weight: 700;
+      }
+
+      & p{
+        width: 80%;
+        font-size: .9rem;
+        margin-top: 1rem;
+      }
+      
+    }
+    .shoe-image{
+      /* covers 2 columns and 1 row with 2nd column of the grid as common */
+      grid-column: 2/4;
+      grid-row: 1/2;
+      /* In case the text content and shoe image overlap, the text should be above the image */
+      z-index: 1;
+
+      /* in medium and larger screen devices, image will be tilted for design */
+      & img{
+        rotate: -19deg;
+      }
+      
+    }
+  }
+
+  /* for larger screens */
+  @media (min-width: 993px){
+    .text-content{
+      margin-left:2rem;
+      & h1{
+        font-size: 3.57rem;
+        line-height: 53px;          
+      }
+
+      & p{
+        width: 50%;
+        font-size: .9rem;
+      }
+
+    }
+  }
+
+  /* for screen size less than */
+  @media (max-width: 280px){
+
+    .text-content{
+      padding: 0;
+    }
+
+    .shoe-image{
+      & img{
+        width: 100%;
+      }
+    }
+  }
+
+  /* ------------------------------LIMITED EDITION PRODUCTS--------------------------------------------- */
+  .limited-edition {
+    /* margin-bottom fot the h1 and p tags in the text-content class  */
+    --bottom-margin: .5rem;
+
+    padding-block: 7rem;
+    
+    /* container of the limited edition section */
+    & .container-fluid {
+      display: flex;
+      
+      padding: 3rem 0 3rem 5rem;
+      background-color: rgb(208, 212, 213);
+
+      & .text-content {
+        /* use flex to layout the text content */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 22rem;
+
+        & h1 {
+          font-size: 2rem;
+          font-weight: 700;
+          margin-bottom: var(--bottom-margin);
+        }
+
+        & p {
+          width: 80%;
+          font-size: 0.7rem;
+          font-weight: 600;
+          color: rgb(117, 117, 117);
+          margin-bottom: var(--bottom-margin);
+          }
+        }
+      
+      /* make the scrollbar disappear */
+      /* firefox doent support */
+      & .items-limited-edition::-webkit-scrollbar{
+        display: none;
+        }
+      & .items-limited-edition {
+        /* padding-left: 2rem; */
+        white-space: nowrap;
+        overflow-x: auto;
+
+        & .card{
+            display: inline-block;
+            margin-inline: 1rem;
+            width: 16rem;
+            background-color: #F6F6F6;
+            border: none;
+            box-shadow: 5px 5px 7px rgba(0, 0, 0, 16%);
+            overflow: hidden;
+
+            & .card-img-top{
+              transition: transform .5s ease-in-out;
+              }
+
+            & .shoe-catagory, .shoe-name{
+              padding: 1rem 2rem;
+              font-size: 1rem;
+              border: none;
+              border-radius: 8px 0 0 8px;
+              margin: 0;
+              float: inline-end;
+              float: right;
+              cursor: pointer;
+              transition: transform .5s ease-in-out;
+              }
+
+            /* on hover over the shoes name or catagory, it will move to right */
+            & .shoe-name:hover, .shoe-catagory:hover{
+              transform: translateX(10px);
+              }
+
+            & .shoe-name{
+              background-color: #D0D4D5;
+              transition: transform .5s ease-in-out;
+              }
+
+            & .shoe-catagory{
+              position: relative;
+              background-color: black;
+              color: white;
+              border-top-right-radius: 8px !important;
+              }  
+        }
+        & .card:hover{
+          & .card-img-top{
+            transform: translateY(-20px);
+            
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 530px){
+    .limited-edition{
+      & .container-fluid {
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem !important;
+        margin-block: 2rem;
+
+
+        & .text-content{
+          & h1{
+            font-size: 2rem;
+          }
+        }
+
+        & .items-limited-edition {
+          margin-left: -10px;
+
+          .card{
+            width: 14rem !important;
+          }
+        }
+    }
+    }
+  }
+
+  /* ------------------------------FEATURED PRODUCTS SWIPER--------------------------------------------- */
+  /* Swiper's CSS */
+    .featured-products{
+      height: 80svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      & h1{
+        margin-bottom: 5rem;
+        text-align: center;
+      }
+      & .swiper {
+          width: 100%;
+          padding-bottom: 2rem;
+
+          /* CSS for each slide */
+          & .swiper-slide {
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          /* CSS for the pagination */
+          /* moved 1rem down */
+          & .swiper-pagination{
+            margin-top: 1rem;
+          }
+
+          /* -----------------Featured Product CSS------------------ */
+          .card{
+            border-radius: 0;
+            border: 0;
+            padding: .6rem;
+            position: relative;
+            
+            /* COntainer to mask the product image */
+            & .img-container{
+              position: relative;
+              /* mask CSS for chrome */
+              -webkit-mask-image: url("../images/main_page/Ellipse\ 2.svg");
+              -webkit-mask-size: contain;
+              -webkit-mask-repeat: no-repeat;
+              /* mask CSS for other browsers */
+              mask-image: url("../images/main_page/Ellipse\ 2.svg");
+              mask-size: contain;
+              mask-repeat: no-repeat;
+
+              /* Product image */
+              & .card-img-top{
+                /* Using aspect ratio to make height equal to width */
+                aspect-ratio: 1/1;
+                object-fit: cover;
+                
+                transition: transform 0.5s ease-in-out;
+              }
+              & .img-background{
+                background-color: #F6F6F6;
+                position: absolute;
+                inset: 0;
+                z-index: -1;
+              }
+            }
+            & .item-detail{
+              position: absolute;
+              z-index: 10;
+              transition: transform 0.5s ease-in-out;
+              background-color: #d0d4d570;
+              padding: 10px;
+              border-radius: 10px;
+              
+              /* outline: 1px solid red; */
+
+              & .shoe-name{
+                font-size: 31px;
+                font-weight: 600;
+                margin: 0;
+                line-height: 1;
+              }
+              & .shoe-catagory{
+                margin: 0;
+                color: #837F7F;
+                font-weight: 500;
+                font-size: 14px;                
+              }
+              
+            }
+
+            /* price */
+            & .item-price{
+              position: absolute;
+              bottom: 0;
+              right: 0;
+              z-index: 6;
+              color: #F46F0F;
+              transition: transform 0.5s ease-in-out;
+              & .shoe-price{
+                  font-size: 31px;
+                  font-weight: 600;
+                  
+                }
+                & .shoe-price::before{
+                  content: "\20B9";
+                  padding-right: 10px;
+                }
+            }
+
+            /* item description */
+            & .item-description{
+              position: absolute;
+              inset: 0;
+              outline: 2px solid;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              padding: 1rem;
+              padding-top: 3.5rem;
+              /* margin: 1rem; */
+              /* mask CSS for chrome */
+              -webkit-mask-image: url("../images/main_page/Ellipse\ 2.svg");
+              -webkit-mask-size: contain;
+              -webkit-mask-repeat: no-repeat;
+              /* mask CSS for other browsers */
+              mask-image: url("../images/main_page/Ellipse\ 2.svg");
+              mask-size: contain;
+              mask-repeat: no-repeat;
+              /* transparent bg */
+              background: linear-gradient(135deg, rgba(43, 43, 43, 0.459), rgba(26, 26, 26, 0.507));
+              backdrop-filter: blur(0px);
+              -webkit-backdrop-filter: blur(10px);
+              z-index: 5;
+              transform: translate(100%, 100%);
+              opacity: 0;
+              transition: all 0.5s ease;
+
+              /* text detail about product */
+              & p{
+                
+                font-size: 14px;
+                line-height: 18px;
+                text-align: center;
+                color: white;
+                text-shadow: 1px 2px 3px black;
+                
+              }
+              & i{
+                font-size: 2rem;
+                color: white;
+                transition: all 0.5s ease;
+              }
+              & i:hover{
+                text-shadow: 1px 2px 3px black;;
+                scale: 1.2;
+                color: #F46F0F;;
+                cursor: pointer;
+              }
+            }
+          }
+          .card:hover {
+            /* box-shadow: 0px 6px 24px 1px rgba(168,169,170,1); */
+            z-index: 1;
+
+            & img{
+              transform: scale(.8);
+            }
+            & .item-detail{
+              transform: translate(-5px, -5px);
+            }
+            & .item-price{
+              transform: translate(5px, 5px);
+            }
+            & .item-description{
+              transform: translate(0,0);
+              opacity: 1;
+            }
+
+          }
+        }
+      }

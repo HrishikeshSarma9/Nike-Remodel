@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Remix CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../../css/commonFileCSS/login.css">
+    
+    
+</head>
+<body >
+
+    <nav></nav>
+    <main>
+      <section class="login-section">
+        <div class="container d-flex justify-content-center align-items-center">
+            <div class="login-content">
+                <!-- Nike logo row -->
+                <div class="row">
+                    <img src="../../images/logo/Logo_NIKE_white.svg" alt="" height="30px">
+                </div>
+                <!-- Login text row -->
+                <div class="row">
+                    <h1 class="login-title text-center">Login</h1>
+                </div>
+                <!-- login form roe -->
+                <div class="row">
+                    <div class="col d-flex justify-content-center">
+                        <!-- Login form -->
+                        <form method="post" class="login-form">
+
+                            <!-- Input For email -->
+                            <label for="email">
+                                <i class="ri-mail-fill"></i>
+                                <input type="email" name="email" id="email" placeholder="Email" required>
+                            </label>
+
+                            <!-- Input For password -->
+                            <label for="password">
+                                <i class="ri-lock-password-line"></i>
+                                <input type="password" name="password" id="password" placeholder="Password" required>
+                            </label>
+
+                            <!-- Submit button -->
+                            <label for="submit">
+                                <div class="login-form-btn" onclick="myFun()">Submit</div>
+                                <!-- <input type="submit" name="submit" class="login-form-btn  w-100" id="submit" > -->
+                            </label>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+
+    </footer>
+
+    <!-- JQuery JS CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    
+    <!-- Font Awesome -->
+   <script src="https://kit.fontawesome.com/784e522f91.js" crossorigin="anonymous"></script> 
+
+    <!-- Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="../../JS/assets/GSAP/loginGSAP.js"></script>
+
+    <!-- validation -->
+    <script>
+        function myFun(){
+
+            let email = document.getElementById("email");
+            let password = document.getElementById("password");
+
+            // check email and password
+            if( email.value === "admin@admin.com" && password.value === "123456" ){
+                email.value = "";
+                password.value = ""
+                // if match found alert message "Login Successfull"
+                alert("Login Successfull");
+            }
+            else{
+                alert("Incorrect email or password");
+            }
+            
+        }
+    </script>
+    
+
+    <!-- Load header and footer -->
+    <script src="../../JS/loader.js">
+    </script><!-- End of header and footer loader -->
+</body>
+</html>

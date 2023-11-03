@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="139" height="228" viewBox="0 0 139 228">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #f3f2f3;
+        font-size: 102px;
+        font-family: RoundedElegance-Regular, Rounded Elegance;
+      }
+
+      .cls-2 {
+        filter: url(#nike);
+      }
+    </style>
+    <filter id="nike" x="0" y="0" width="139" height="228" filterUnits="userSpaceOnUse">
+      <feOffset dx="9" dy="8" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feFlood flood-color="#d2cfd2"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g class="cls-2" transform="matrix(1, 0, 0, 1, 0, 0)">
+    <text id="nike-2" data-name="nike" class="cls-1" transform="translate(95 207) rotate(-90)"><tspan x="0" y="0">nike</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,128 @@
+
+.product-data{
+    .card
+    {
+        width: 18rem;
+        background-color: #F6F6F6;
+        padding: 0.6rem;
+        position: relative;
+        border: none;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: box-shadow 0.3s ease-in-out;
+        cursor: pointer;
+        
+
+        & .card-img-top{
+            transform: translateY(-1rem);
+            transition: transform 0.3s ease-in;
+        }
+
+        & .item-detail{
+            
+            transition: opacity 0.3s ease-in-out;
+            & h3{
+                font-size: 1.4rem ;
+                font-weight: 500;
+                margin: 0;
+                line-height: 1;
+            }
+            & p{
+                color: rgb(158, 156, 156);
+                margin: 0;
+                padding-top: .5rem;
+                color: #837F7F;
+                font-weight: 500;
+                font-size: .9rem;
+                line-height: 1rem;
+            }
+        }
+
+        /* Container that reveals on hover over a product */
+        & .item-price{
+            position: absolute;
+            height: 100%;
+            bottom: 2rem;
+            top: 0;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            text-align: center;
+            overflow: hidden;
+            
+            color: #F46F0F;
+            border-radius: 12px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            
+            /* cart icon */
+            & i{
+                font-size: 1.3rem;
+                height: 2.5rem;
+                padding-top: .6rem;
+                padding-right: .6rem;
+                float: right;
+                transition: all 0.3s ease;
+            }
+
+
+            /* Items description */
+            & .item-desciption{
+                position: absolute;
+                bottom: 2rem;
+                padding-right: 1rem;
+                color: black;
+                font-size: .9rem;
+                line-height: 100%;
+                text-align: right;
+                
+            }
+            
+            & .shoe-price{
+                position: absolute;
+                bottom: 0;
+                text-align: center;
+                font-size: 1.3rem;
+                font-weight: 600;
+                transition: all .5s ease-in-out;
+                
+            }
+            /* Rupees sign */
+            & .shoe-price::before{
+                
+                content: "\20B9";
+                /* padding-right: 1px; */
+            }
+        }
+        
+    }
+
+    .card:hover{
+        box-shadow: 0px 6px 24px 1px rgba(168,169,170,1);
+        
+
+        & .card-img-top{
+            transform: translateY(-1.5rem)
+        }
+        & .item-detail{
+            opacity: 0;
+        }
+        & .item-price{
+
+            opacity: 100%;
+
+            & i:hover{
+                color: crimson;
+                transform: translateY(-3px);
+                scale: 1.1;
+            }
+
+            & .shoe-price:hover{
+                scale: 1.2;
+                transform: translateY(-3px);
+            }
+        }
+        
+    }
+}

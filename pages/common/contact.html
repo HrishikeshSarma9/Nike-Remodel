@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Remix CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../../css/commonFileCSS/contact.css">
+    
+    
+</head>
+<body style="background-color: rgb(242, 242, 242);">
+
+    <nav></nav>
+    <main>
+        <section class="contact-container">
+            <div class="container-fluid">
+                <!-- row -->
+                <div class="row m-0">
+                    <!-- Column 1 -->
+                    <div class="col-lg-6 col-md-6 col-sm-12 p-0 d-flex justify-content-center">
+                        <!-- image in Column 1-->
+                        <div class="contact-image">
+                            <img src="https://images.unsplash.com/photo-1620138546918-2235a6e88ee0?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                        </div>
+                    </div>
+                    <!-- Column 2 -->
+                    <div class="col-lg-6 col-md-6 col-sm-12 p-0 d-flex align-items-center">
+                        <div class="contact-content d-flex flex-column align-items-center">
+                            <h1 class="text-center mt-5">Contact Us</h1>
+                            <!-- contact form -->
+                            <form class="contact-form">
+                                <input type="text"   name="first-name" id="first-name" placeholder="FIRST NAME" pattern="[A-Za-z]">
+                                <input type="text" name="last-name" id="last-name" placeholder="LAST NAME" pattern="[A-Za-z]">
+                                <input type="email" name="email" id="email" placeholder="EMAIL">
+                                <!-- pattern allows only numeric values and only 10 values -->
+                                <input type="tel" name="phone" id="phone" placeholder="MOBILE NUMBER" pattern="[0-9]{10}">
+                                <textarea name="message" id="message" placeholder="MESSAGE" rows="5"></textarea>
+                                <input type="submit" class="contact-submit-btn">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+
+    <!-- JQuery JS CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    
+    <!-- Font Awesome -->
+   <script src="https://kit.fontawesome.com/784e522f91.js" crossorigin="anonymous"></script> 
+
+    <!-- Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- GSAP code -->
+    <script src="../../JS/assets/GSAP/contactGSAP.js"></script>
+
+    <!-- Load header and footer -->
+    <script src="../../JS/loader.js">
+    </script><!-- End of header and footer loader -->
+</body>
+</html>
